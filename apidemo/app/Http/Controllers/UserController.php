@@ -15,8 +15,8 @@ class UserController extends BaseController
         return $this->success($id);
 
     }
-    public function info(){
-        $user = UserService::getInstance()->getUserInfo();
+    public function info(Request $request,UserService $userService){
+        $user = $userService->getUserInfo();
         return $this->success($user);
     }
 }
